@@ -8,17 +8,24 @@ public class CharacterMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
     private Vector2 movementInput;
+    private Animator anim;
     private bool isJumping;
     private bool isGrounded;
+    private bool isOnEdge;
+    private bool isFacingLeft;
 
-    public Transform groundCheck;
+    public Transform cTransform;
     public LayerMask groundLayer;
+    public LayerMask edgeLayer;
     public float speed = 5f;
     public float jumpForce = 10f;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
+        isFacingLeft = false;
+        isJumping = false;
     }
 
     void FixedUpdate()
@@ -29,8 +36,8 @@ public class CharacterMovement : MonoBehaviour
 
     void CheckGrounded()
     {
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.7f, groundLayer);
-        Debug.Log(isGrounded);
+        isGrounded = Physics2D.OverlapCircle(cTransform.position, 1f, groundLayer);
+        isOnEdge = Physics2D.OverlapCircle(cTransform.position, 0.7f, edgeLayer);
     }
 
     void Move()
@@ -38,18 +45,38 @@ public class CharacterMovement : MonoBehaviour
         Vector2 moveDirection = new Vector2(movementInput.x, 0);
         rb.velocity = new Vector2(moveDirection.x * speed, rb.velocity.y);
 
+        //Facing
+        if (movementInput.x < 0 && !isFacingLeft) {
+            cTransform.Rotate(0f, 180f, 0f);
+            isFacingLeft = true;
+        }
+
+        if (movementInput.x > 0 && isFacingLeft) {
+            cTransform.Rotate(0f, 180f, 0f);
+            isFacingLeft = false;
+        }
+
+        //Animate
+        if (movementInput.x != 0)
+        {   
+            anim.SetBool("isWalking", true);
+        } else anim.SetBool("isWalking", false);
+
+        //Jumping
         if (isJumping)
         {
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
             isJumping = false;
         }
 
-        if (isGrounded)
-        {
-            rb.velocity = new Vector2(moveDirection.x * speed, rb.velocity.y-2f);
+        //Loi on edge
+        if (isOnEdge)
+        {   
+            //Debug.Log("On edge");
+            if(rb.velocity.y == 0) {
+                rb.velocity = new Vector2(moveDirection.x * speed, rb.velocity.y-4f);
+            }
         }
-        
-
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -60,8 +87,11 @@ public class CharacterMovement : MonoBehaviour
     public void OnJump(InputAction.CallbackContext context)
     {
         if (context.performed)
-        {
-            isJumping = true;
+        {   
+            if (isGrounded) {
+                Debug.Log("Jump");
+                isJumping = true;
+            }
         }
     }
 }

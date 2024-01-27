@@ -9,8 +9,9 @@ public class SpecialMove : MonoBehaviour
     public int count3;
     public int count4;
 
-    [SerializeField] public GameObject player;
 
+    [SerializeField] public GameObject player;
+    [SerializeField] public GameObject portal;
     // Start is called before the first frame update
     public void Start()
     {
@@ -21,22 +22,34 @@ public class SpecialMove : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.X)) {
+            useJumpPush();
+        }
+        if(Input.GetKeyDown(KeyCode.Z)) {
+            usePortal();
+        }
     }
 
     void useGun()
     {
-
+        
     }
     
 
     public void usePortal() {
-        if (count2 == 0) return;
+        //if (count2 == 0) return;
         --count2;
-       
+        Instantiate(portal, new Vector2(player.transform.position.x - 2f, player.transform.position.y), Quaternion.identity);
     }
 
-    public void useDoubleJump() {
-        
+    public void useJumpPush() {
+        if (count3 == 0) {
+            Debug.Log("Out of stock!");
+            return;
+        }
+        --count3;
+        float jumpForce = GetComponent<CharacterMovement>().jumpForce * 2;
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
     }
 }
