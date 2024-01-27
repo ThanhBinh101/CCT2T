@@ -32,7 +32,7 @@ public class CharacterMovement : MonoBehaviour
     {
         Move();
         CheckGrounded();
-        Debug.Log(isGrounded);
+        //Debug.Log(isGrounded);
     }
 
     void CheckGrounded()
@@ -90,7 +90,7 @@ public class CharacterMovement : MonoBehaviour
         if (context.performed)
         {   
             if (isGrounded) {
-                Debug.Log("Jump");
+                //Debug.Log("Jump");
                 isJumping = true;
             }
         }

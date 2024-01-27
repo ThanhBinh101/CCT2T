@@ -37,7 +37,10 @@ public class SpecialMove : MonoBehaviour
     
 
     public void usePortal() {
-        //if (count2 == 0) return;
+        if (count3 == 0) {
+            Debug.Log("Out of stock!");
+            return;
+        }
         --count2;
         Instantiate(portal, new Vector2(player.transform.position.x - 2f, player.transform.position.y), Quaternion.identity);
     }
