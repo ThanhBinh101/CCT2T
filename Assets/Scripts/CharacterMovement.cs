@@ -63,7 +63,7 @@ public class CharacterMovement : MonoBehaviour
         {   
             if (isGrounded) {
                 isJumping = true;
-            } 
+            }
         }
     }
 }
