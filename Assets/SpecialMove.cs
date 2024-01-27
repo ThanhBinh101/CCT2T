@@ -37,6 +37,7 @@ public class SpecialMove : MonoBehaviour
     }
 
     public void useDoubleJump() {
-        
+        if (count3 == 0) return;
+        --count3;
     }
 }

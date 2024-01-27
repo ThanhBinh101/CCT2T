@@ -10,9 +10,11 @@ public class CharacterMovement : MonoBehaviour
     private Vector2 movementInput;
     private bool isJumping;
     private bool isGrounded;
+    private bool isOnEdge;
 
-    public Transform groundCheck;
+    public Transform cTransform;
     public LayerMask groundLayer;
+    public LayerMask edgeLayer;
     public float speed = 5f;
     public float jumpForce = 10f;
 
@@ -29,8 +31,8 @@ public class CharacterMovement : MonoBehaviour
 
     void CheckGrounded()
     {
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.7f, groundLayer);
-        Debug.Log(isGrounded);
+        isGrounded = Physics2D.OverlapCircle(cTransform.position, 0.7f, groundLayer);
+        isOnEdge = Physics2D.OverlapCircle(cTransform.position, 0.7f, edgeLayer);
     }
 
     void Move()
@@ -44,12 +46,10 @@ public class CharacterMovement : MonoBehaviour
             isJumping = false;
         }
 
-        if (isGrounded)
+        if (isOnEdge)
         {
             rb.velocity = new Vector2(moveDirection.x * speed, rb.velocity.y-2f);
         }
-        
-
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -60,8 +60,10 @@ public class CharacterMovement : MonoBehaviour
     public void OnJump(InputAction.CallbackContext context)
     {
         if (context.performed)
-        {
-            isJumping = true;
+        {   
+            if (isGrounded) {
+                isJumping = true;
+            } 
         }
     }
 }

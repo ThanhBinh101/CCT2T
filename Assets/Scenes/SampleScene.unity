@@ -422,7 +422,7 @@ GameObject:
   - component: {fileID: 309854826}
   - component: {fileID: 309854825}
   - component: {fileID: 309854824}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: Square (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1034,7 +1034,7 @@ GameObject:
   - component: {fileID: 1368860955}
   - component: {fileID: 1368860954}
   - component: {fileID: 1368860953}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: Square (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1308,7 +1308,7 @@ GameObject:
   - component: {fileID: 1425880473}
   - component: {fileID: 1425880472}
   - component: {fileID: 1425880475}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Circle
   m_TagString: GreenPortal
   m_Icon: {fileID: 0}
@@ -1604,10 +1604,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea6093eb2b5824598a7a091d1563eaa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundCheck: {fileID: 1447614143}
+  cTransform: {fileID: 1447614143}
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  edgeLayer:
+    serializedVersion: 2
+    m_Bits: 0
   speed: 5.55
   jumpForce: 6.9
 --- !u!114 &1447614145
@@ -1701,7 +1704,7 @@ GameObject:
   - component: {fileID: 1719708520}
   - component: {fileID: 1719708519}
   - component: {fileID: 1719708518}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Circle (1)
   m_TagString: BluePortal
   m_Icon: {fileID: 0}
