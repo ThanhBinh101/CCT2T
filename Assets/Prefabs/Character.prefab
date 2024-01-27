@@ -33,7 +33,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.04, y: -2.27, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -243,8 +243,8 @@ MonoBehaviour:
   edgeLayer:
     serializedVersion: 2
     m_Bits: 8
-  speed: 3
-  jumpForce: 10
+  speed: 4
+  jumpForce: 9
 --- !u!114 &1185837736389495652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -262,7 +262,7 @@ MonoBehaviour:
   count3: 0
   count4: 0
   player: {fileID: 5388225658860182049}
-  portal: {fileID: 0}
+  portal: {fileID: 3033854830923565044, guid: 6b787a33f67e54d8da566ff2c8af1e3e, type: 3}
 --- !u!95 &2939384120056855934
 Animator:
   serializedVersion: 5
