@@ -13,16 +13,9 @@ public class SpecialMove : MonoBehaviour
 
     [SerializeField] public GameObject player;
     [SerializeField] public GameObject portal;
-    // Start is called before the first frame update
     public void Start()
     {
         count1 = count2 = count3 = count4 = 0;
-
-    }
-
-    // Update is called once per frame
-    public void Update()
-    {
 
     }
 
@@ -55,11 +48,11 @@ public class SpecialMove : MonoBehaviour
     }
 
     public void useJumpPush() {
-        if (count3 == 0) {
+        if (count2 == 0) {
             Debug.Log("Out of stock!");
             return;
         }
-        --count3;
+        --count2;
         float jumpForce = GetComponent<CharacterMovement>().jumpForce * 2;
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);

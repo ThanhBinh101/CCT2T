@@ -5,8 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - bridge
-  - BluePortal
-  - GreenPortal
+  - Portal
+  - JumpPush
+  - Swap
+  - Initial
   layers:
   - Default
   - TransparentFX

@@ -7,8 +7,8 @@ public class ItemPortal : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other) {
         if (other.tag == "Player") {
             SpecialMove player = other.GetComponent<SpecialMove>();
-            if (player.count3 < 5) {
-                ++player.count3;
+            if (player.count2 < 5) {
+                ++player.count2;
                 gameObject.SetActive(false);             
             }
         }
