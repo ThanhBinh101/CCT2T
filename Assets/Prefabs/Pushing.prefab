@@ -46,8 +46,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d33386ed4e75c244cbea4be83dbff65f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player1: {fileID: 6309813999624228501}
   life: 3
-  forceApplied: 25
+  speed: 3
+  direction: {x: 0, y: 0, z: 0}
 --- !u!50 &-6419156200075273276
 Rigidbody2D:
   serializedVersion: 4

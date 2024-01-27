@@ -117,7 +117,7 @@
                 {
                     "name": "",
                     "id": "5e6865d5-5f3c-468c-bf05-210652936b07",
-                    "path": "<Keyboard>/numpad1",
+                    "path": "<Keyboard>/1",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -150,7 +150,7 @@
                 {
                     "name": "",
                     "id": "2caefea0-daf1-4175-ad23-3ebd3de9ec4d",
-                    "path": "<Keyboard>/numpad4",
+                    "path": "<Keyboard>/4",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

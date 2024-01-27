@@ -13,8 +13,6 @@ GameObject:
   - component: {fileID: 139019113583589811}
   - component: {fileID: 428138035523118699}
   - component: {fileID: 908147975377366468}
-  - component: {fileID: 3372386626120394568}
-  - component: {fileID: 1185837736389495652}
   - component: {fileID: 2939384120056855934}
   m_Layer: 0
   m_Name: Character
@@ -189,7 +187,7 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3372386626120394568}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: CharacterMovement, Assembly-CSharp
         m_MethodName: OnMove
         m_Mode: 0
@@ -205,7 +203,7 @@ MonoBehaviour:
     m_ActionName: Player/Movement[/Keyboard/space]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3372386626120394568}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: CharacterMovement, Assembly-CSharp
         m_MethodName: OnJump
         m_Mode: 0
@@ -224,45 +222,6 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &3372386626120394568
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5388225658860182049}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea6093eb2b5824598a7a091d1563eaa4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cTransform: {fileID: 526955018879857034}
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  edgeLayer:
-    serializedVersion: 2
-    m_Bits: 8
-  speed: 4
-  jumpForce: 9
---- !u!114 &1185837736389495652
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5388225658860182049}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09e82746879f94df9afc523536211c4c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  count1: 0
-  count2: 0
-  count3: 0
-  count4: 0
-  player: {fileID: 5388225658860182049}
-  portal: {fileID: 3033854830923565044, guid: 6b787a33f67e54d8da566ff2c8af1e3e, type: 3}
 --- !u!95 &2939384120056855934
 Animator:
   serializedVersion: 5

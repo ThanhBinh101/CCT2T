@@ -10,7 +10,7 @@ public class Portal : MonoBehaviour
     private GameObject _instantiatePortal;
     private void Start()
     {
-        _instantiatePortal = Instantiate(targetPortal, new Vector2(transform.position.x + UnityEngine.Random.Range(-8f, 8f), transform.position.y + UnityEngine.Random.Range(-8f, 8f)), Quaternion.identity);
+        _instantiatePortal = Instantiate(targetPortal, new Vector2(UnityEngine.Random.Range(-8f, 8f), UnityEngine.Random.Range(-8f, 8f)), Quaternion.identity);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
