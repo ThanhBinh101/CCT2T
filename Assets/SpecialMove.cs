@@ -24,6 +24,7 @@ public class SpecialMove : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.X)) {
             usePortal();
+            useJumpPush();
         }
     }
 
@@ -39,8 +40,14 @@ public class SpecialMove : MonoBehaviour
         Instantiate(portal, new Vector2(player.transform.position.x - 2f, player.transform.position.y), Quaternion.identity);
     }
 
-    public void useDoubleJump() {
-        if (count3 == 0) return;
+    public void useJumpPush() {
+        if (count3 == 0) {
+            Debug.Log("Out of stock!");
+            return;
+        }
         --count3;
+        float jumpForce = GetComponent<CharacterMovement>().jumpForce * 2;
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
     }
 }
