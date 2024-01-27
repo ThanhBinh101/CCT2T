@@ -171,9 +171,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4574958647005718509, guid: 35b9c04d4673448c3be45e1693252da6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4961509344369936069, guid: 35b9c04d4673448c3be45e1693252da6, type: 3}
       propertyPath: m_Name
       value: Gun
+      objectReference: {fileID: 0}
+    - target: {fileID: 5040154275979037401, guid: 35b9c04d4673448c3be45e1693252da6, type: 3}
+      propertyPath: speed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5076077971025217279, guid: 35b9c04d4673448c3be45e1693252da6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -848,10 +860,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09e82746879f94df9afc523536211c4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  count1: 0
-  count2: 0
-  count3: 0
-  count4: 0
+  count1: 5
+  count2: 5
+  count3: 5
+  count4: 5
   player: {fileID: 1574353652}
   portal: {fileID: 3033854830923565044, guid: 6b787a33f67e54d8da566ff2c8af1e3e, type: 3}
   gun: {fileID: 310440308}
