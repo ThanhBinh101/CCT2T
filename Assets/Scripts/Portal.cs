@@ -11,7 +11,6 @@ public class Portal : MonoBehaviour
     private void Start()
     {
         _instantiatePortal = Instantiate(targetPortal, new Vector2(transform.position.x + UnityEngine.Random.Range(-8f, 8f), transform.position.y + UnityEngine.Random.Range(-8f, 8f)), Quaternion.identity);
-        Debug.Log("Hello");
     }
 
     private void OnTriggerEnter2D(Collider2D other)
