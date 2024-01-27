@@ -32,11 +32,13 @@ public class CharacterMovement : MonoBehaviour
     {
         Move();
         CheckGrounded();
+        Debug.Log(isGrounded);
     }
 
     void CheckGrounded()
     {
-        isGrounded = Physics2D.OverlapCircle(cTransform.position, 0.5f, groundLayer);
+        Vector3 playerPosition = cTransform.position - new Vector3(0f, 0.4f, 0f);
+        isGrounded = Physics2D.OverlapCircle(playerPosition, 0.2f, groundLayer);
         isOnEdge = Physics2D.OverlapCircle(cTransform.position, 0.7f, edgeLayer);
     }
 
@@ -72,7 +74,6 @@ public class CharacterMovement : MonoBehaviour
         //Loi on edge
         if (isOnEdge)
         {   
-            //Debug.Log("On edge");
             if(rb.velocity.y == 0) {
                 rb.velocity = new Vector2(moveDirection.x * speed, rb.velocity.y-4f);
             }
