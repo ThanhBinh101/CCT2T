@@ -22,9 +22,7 @@ public class SpecialMove : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-        if(Input.GetKeyDown(KeyCode.X)) {
-            usePortal();
-        }
+        if(Input.GetKeyDown(KeyCode.X)) useJumpPush();
     }
 
     void useGun()
@@ -36,11 +34,16 @@ public class SpecialMove : MonoBehaviour
     public void usePortal() {
         //if (count2 == 0) return;
         --count2;
-        Instantiate(portal, new Vector2(player.transform.position.x - 2f, player.transform.position.y), Quaternion.identity);
     }
 
-    public void useDoubleJump() {
-        if (count3 == 0) return;
+    public void useJumpPush() {
+        if (count3 == 0) {
+            Debug.Log("Out of stock!");
+            return;
+        }
         --count3;
+        float jumpForce = GetComponent<CharacterMovement>().jumpForce * 2;
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
     }
 }

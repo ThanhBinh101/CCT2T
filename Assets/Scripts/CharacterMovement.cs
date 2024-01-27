@@ -47,8 +47,11 @@ public class CharacterMovement : MonoBehaviour
         }
 
         if (isOnEdge)
-        {
-            rb.velocity = new Vector2(moveDirection.x * speed, rb.velocity.y-2f);
+        {   
+            Debug.Log("On edge");
+            if(rb.velocity.y == 0) {
+                rb.velocity = new Vector2(moveDirection.x * speed, rb.velocity.y-4f);
+            }
         }
     }
 
