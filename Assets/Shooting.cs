@@ -18,12 +18,16 @@ public class Shooting : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.R))
         {
             var bullet = Instantiate(bulletPrefab, shootingPoint.position, Quaternion.identity);
-            bullet.GetComponent<Rigidbody2D>().velocity = transform.right * speed;
+            // bullet.GetComponent<Rigidbody2D>().velocity = transform.right * speed;
+            var bulletScript = bullet.GetComponent<Bullet>();
+            bulletScript.Initialized(transform.forward);
         }
         if(Input.GetKeyDown(KeyCode.E))
         {
             var push = Instantiate(pushPref, pushingPoint.position, transform.rotation);
-            push.GetComponent<Rigidbody2D>().velocity = transform.right * speed;
+            var pushScript = push.GetComponent<pushing>();
+            // push.GetComponent<Rigidbody2D>().velocity = transform.right * speed;
+            pushScript.Initialized(transform.forward);
         }
     }
 }
