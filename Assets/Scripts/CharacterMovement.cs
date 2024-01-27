@@ -17,8 +17,8 @@ public class CharacterMovement : MonoBehaviour
     public Transform cTransform;
     public LayerMask groundLayer;
     public LayerMask edgeLayer;
-    public float speed = 5f;
-    public float jumpForce = 10f;
+    public float speed = 2f;
+    public float jumpForce = 100f;
 
     void Start()
     {
@@ -36,7 +36,7 @@ public class CharacterMovement : MonoBehaviour
 
     void CheckGrounded()
     {
-        isGrounded = Physics2D.OverlapCircle(cTransform.position, 1f, groundLayer);
+        isGrounded = Physics2D.OverlapCircle(cTransform.position, 0.5f, groundLayer);
         isOnEdge = Physics2D.OverlapCircle(cTransform.position, 0.7f, edgeLayer);
     }
 
