@@ -140,14 +140,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
-    - target: {fileID: 1681857678760384436, guid: 28a6af97f768b4a3f88d765768bf797d, type: 3}
-      propertyPath: m_DefaultActionMap
-      value: Player2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1681857678760384436, guid: 28a6af97f768b4a3f88d765768bf797d, type: 3}
-      propertyPath: m_NeverAutoSwitchControlSchemes
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5353858345970091852, guid: 28a6af97f768b4a3f88d765768bf797d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.5
@@ -191,10 +183,6 @@ PrefabInstance:
     - target: {fileID: 6829303984650747252, guid: 28a6af97f768b4a3f88d765768bf797d, type: 3}
       propertyPath: m_Name
       value: Character 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6829303984650747252, guid: 28a6af97f768b4a3f88d765768bf797d, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -367,14 +355,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
-    - target: {fileID: 908147975377366468, guid: 1f7871686a52445e49bd5e548916c8b6, type: 3}
-      propertyPath: m_DefaultActionMap
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 908147975377366468, guid: 1f7871686a52445e49bd5e548916c8b6, type: 3}
-      propertyPath: m_NeverAutoSwitchControlSchemes
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5388225658860182049, guid: 1f7871686a52445e49bd5e548916c8b6, type: 3}
       propertyPath: m_Name
       value: Character
