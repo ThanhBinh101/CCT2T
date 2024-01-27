@@ -23,8 +23,10 @@ public class SpecialMove : MonoBehaviour
     public void Update()
     {
         if(Input.GetKeyDown(KeyCode.X)) {
-            usePortal();
             useJumpPush();
+        }
+        if(Input.GetKeyDown(KeyCode.Z)) {
+            usePortal();
         }
     }
 
