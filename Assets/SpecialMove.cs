@@ -19,6 +19,11 @@ public class SpecialMove : MonoBehaviour
 
     }
 
+    void Update()
+    {
+        Debug.Log(count2);
+    }
+
     public void OnUsePortal(InputAction.CallbackContext context)
     {
         if(context.performed)
@@ -46,7 +51,7 @@ public class SpecialMove : MonoBehaviour
             Debug.Log("Out of stock!");
             return;
         }
-        --count2;
+        --count3;
         Instantiate(portal, new Vector2(player.transform.position.x - 2f, player.transform.position.y), Quaternion.identity);
     }
 

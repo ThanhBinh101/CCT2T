@@ -219,6 +219,50 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: e49c482d-b623-4092-b8ca-ec371b6adec4
     m_ActionName: Player/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 60e000e2-4512-458f-9ea2-ca93ef657a19
+    m_ActionName: Player/Skill1[/Keyboard/numpad1]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1185837736389495652}
+        m_TargetAssemblyTypeName: SpecialMove, Assembly-CSharp
+        m_MethodName: useJumpPush
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 98fc88d5-5d93-4b45-b816-679766666a4a
+    m_ActionName: Player/Skill2[/Keyboard/2]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1185837736389495652}
+        m_TargetAssemblyTypeName: SpecialMove, Assembly-CSharp
+        m_MethodName: usePortal
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 203617c3-8dbd-4210-9ffd-7010eab4b75b
+    m_ActionName: Player/Skill3[/Keyboard/3]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9baaa899-852f-47a3-97f1-c76f9cd5f6d3
+    m_ActionName: Player/Skill4[/Keyboard/numpad4]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1d54bd7c-48cf-4225-9926-dcea2aee7c5e
+    m_ActionName: Player/Skill5[/Keyboard/5]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player
