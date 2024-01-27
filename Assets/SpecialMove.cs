@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.InputSystem;
 using UnityEngine;
 
 public class SpecialMove : MonoBehaviour
@@ -22,15 +23,26 @@ public class SpecialMove : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-        if(Input.GetKeyDown(KeyCode.X)) {
-            useJumpPush();
-        }
-        if(Input.GetKeyDown(KeyCode.Z)) {
+
+    }
+
+    public void OnUsePortal(InputAction.CallbackContext context)
+    {
+        if(context.performed)
+        {
             usePortal();
         }
     }
 
-    void useGun()
+    public void OnUseJumpPush(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            useJumpPush();
+        }
+    }
+
+    public void useGun()
     {
         
     }
