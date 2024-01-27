@@ -15,7 +15,9 @@ public class Bullet : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("Collision");
-        collision.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, 10f), ForceMode2D.Impulse);
+        var rb2d = collision.gameObject.GetComponent<Rigidbody2D>();
+        if (rb2d != null)
+            rb2d.AddForce(new Vector2(0f, 10f), ForceMode2D.Impulse);
         // Destroy(collision.gameObject);
         Destroy(gameObject);
     }
