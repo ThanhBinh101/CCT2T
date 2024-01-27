@@ -9,8 +9,9 @@ public class SpecialMove : MonoBehaviour
     public int count3;
     public int count4;
 
-    [SerializeField] public GameObject player;
 
+    [SerializeField] public GameObject player;
+    [SerializeField] public GameObject portal;
     // Start is called before the first frame update
     public void Start()
     {
@@ -26,12 +27,12 @@ public class SpecialMove : MonoBehaviour
 
     void useGun()
     {
-
+        
     }
     
 
     public void usePortal() {
-        if (count2 == 0) return;
+        //if (count2 == 0) return;
         --count2;
     }
 

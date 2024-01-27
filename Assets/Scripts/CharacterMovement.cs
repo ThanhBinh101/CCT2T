@@ -91,7 +91,7 @@ public class CharacterMovement : MonoBehaviour
             if (isGrounded) {
                 Debug.Log("Jump");
                 isJumping = true;
-            } 
+            }
         }
     }
 }
