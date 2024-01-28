@@ -11,6 +11,8 @@ TagManager:
   - Initial
   - Swap
   - BluePortal
+  - GreenPortal
+  - Player2
   layers:
   - Default
   - TransparentFX

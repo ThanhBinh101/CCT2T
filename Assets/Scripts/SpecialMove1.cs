@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine;
 
-public class SpecialMove : MonoBehaviour
+public class SpecialMove1 : MonoBehaviour
 {
     public int count1 = 1;
     public int count2;
@@ -21,10 +21,10 @@ public class SpecialMove : MonoBehaviour
     }
 
     public void FixedUpdate() {
-        //if (Input.GetKeyDown(KeyCode.Alpha1)) usePush();
-        if (Input.GetKeyDown(KeyCode.Alpha2)) useJumpPush();
-        if (Input.GetKeyDown(KeyCode.Alpha3)) usePortal();
-        if (Input.GetKeyDown(KeyCode.Alpha4)) useGun();
+        //if (Input.GetKeyDown(KeyCode.Alpha7)) usePush();
+        if (Input.GetKeyDown(KeyCode.Alpha8)) useJumpPush();
+        if (Input.GetKeyDown(KeyCode.Alpha9)) usePortal();
+        if (Input.GetKeyDown(KeyCode.Alpha0)) useGun();
     }
 
     public void usePush() {

@@ -7,8 +7,13 @@ using System;
 public class CharacterMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
+    private Vector2 movementInput1;
+    private Vector2 movementInput2;
     private Vector2 movementInput;
+    float left, right, left2, right2;
     private Animator anim;
+    private bool isJumping1;
+    private bool isJumping2;
     private bool isJumping;
     private bool isGrounded;
     private bool isOnEdge;
@@ -30,9 +35,10 @@ public class CharacterMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        OnMove();
+        OnJump();
         Move();
         CheckGrounded();
-        //Debug.Log(isGrounded);
     }
 
     void CheckGrounded()
@@ -44,6 +50,15 @@ public class CharacterMovement : MonoBehaviour
 
     void Move()
     {
+        if(this.tag == "Player") {
+            movementInput = movementInput1;
+            isJumping = isJumping1;
+        }
+        else if(this.tag == "Player2") {
+            movementInput = movementInput2;
+            isJumping = isJumping2;
+        }
+
         Vector2 moveDirection = new Vector2(movementInput.x, 0);
         rb.velocity = new Vector2(moveDirection.x * speed, rb.velocity.y);
 
@@ -84,17 +99,30 @@ public class CharacterMovement : MonoBehaviour
         }
     }
 
-    public void OnMove(InputAction.CallbackContext context)
-    {
-        movementInput = context.ReadValue<Vector2>();
+    public void OnMove()
+    {   left = right = left2 = right2 = 0;
+        if (Input.GetKey(KeyCode.D)) right = 1;
+        if (Input.GetKey(KeyCode.A)) left = 1;
+        if (Input.GetKey(KeyCode.RightArrow)) right2 = 1;
+        if (Input.GetKey(KeyCode.LeftArrow)) left2 = 1;
+        movementInput1 = new Vector2(right-left, 0);
+        movementInput2 = new Vector2(right2-left2, 0);
     }
 
-    public void OnJump(InputAction.CallbackContext context)
+    public void OnJump()
     {
-        if (context.performed)
+        isJumping1 = isJumping2 = isJumping;
+        if (Input.GetKeyDown(KeyCode.W))
         {   
+            Debug.Log("Player1 Jump");
             if (isGrounded) {
-                isJumping = true;
+                isJumping1 = true;
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.UpArrow)) {
+            Debug.Log("Player2 Jump");
+            if (isGrounded) {
+                isJumping2 = true;
             }
         }
     }
