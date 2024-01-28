@@ -54,10 +54,7 @@ public class SpecialMove : MonoBehaviour
     }
 
     public void usePush() {
-        if (count1 == 0) return;
-        --count1;
         gun.PUSH();
-        
     }
 
     public void useJumpPush()

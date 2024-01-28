@@ -63,6 +63,10 @@ public class CharacterMovement : MonoBehaviour
         {   
             anim.SetBool("isWalking", true);
         } else anim.SetBool("isWalking", false);
+        if(isGrounded) 
+        {
+            anim.SetBool("isJumping", false);
+        } else anim.SetBool("isJumping", true);
 
         //Jumping
         if (isJumping)
@@ -90,7 +94,6 @@ public class CharacterMovement : MonoBehaviour
         if (context.performed)
         {   
             if (isGrounded) {
-                //Debug.Log("Jump");
                 isJumping = true;
             }
         }
